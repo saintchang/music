@@ -1,0 +1,60 @@
+create table Carts(
+	RecordId int NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,CartId int not null
+	,AlbumId int not null
+	,Count int not null
+	,DateCreated datetime not null
+
+)
+
+
+create table OrderDetails(
+	OrderDetailId int NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,OrderId int not null
+	,AlbumId int not null
+	,Quantity int not null
+	,UnitPrice decimal(10,2) not null
+)
+
+create table Albums(
+	AlbumId INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,GenreId int not null
+	,ArtistId int not null
+	,Title varchar(200) not null
+	,Price decimal(10,2) not null
+	,AlbumArtUrl varchar(120) 
+)
+
+create table Artists(
+	ArtistId INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,Name VARCHAR(100) NOT NULL
+)
+
+create table Genres(
+	GenreId INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,Name VARCHAR(100) NOT NULL
+	,Description VARCHAR(200) 
+)
+
+create table mvc_user(
+	username varchar(20) PRIMARY KEY NOT NULL,
+	password varchar(20) NOT NULL,
+	email    varchar(50) NOT NULL,
+	is_admin bool not null 	
+)
+
+create table Orders(
+	OrderId INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+	,OrderDate DATETIME NOT NULL
+	,Username VARCHAR(30)character set UTF8 NOT NULL
+	,FirstName VARCHAR(30)NOT NULL
+	,LastName VARCHAR(30)NOT NULL
+	,Address VARCHAR(100)NOT NULL
+	,City VARCHAR(30)NOT NULL
+	,State VARCHAR(20)NOT NULL
+	,PostalCode VARCHAR(10)NOT NULL
+	,Country VARCHAR(20)NOT NULL
+	,Phone VARCHAR(20)NOT NULL
+	,Email VARCHAR(50)NOT NULL
+	,Total DECIMAL(18,2)NOT NULL
+)
